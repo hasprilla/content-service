@@ -24,6 +24,8 @@ public class SecurityConfig {
                         .pathMatchers("/api/v1/content/public/**", "/actuator/**", "/api/v1/tracks/**",
                                 "/api/v1/genres/**")
                         .permitAll() // Typically content is public or has specific rules
+                        .pathMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/webjars/**")
+                        .permitAll()
                         .anyExchange().authenticated())
                 .build();
     }
